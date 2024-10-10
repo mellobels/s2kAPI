@@ -15,17 +15,17 @@ class transactiondetails extends Model
     public $incrementing = true;
     protected $keyType = "int";
     protected $fillable = [
-        "categ_id",
-        "transac_id",
-        "qty",
-        "weight",
-        "price"
+        "Categ_ID",
+        "Tracking_number",
+        "Qty",
+        "Weight",
+        "Price"
     ];
 
     public function transaction()
     {
-        return $this->belongsTo(Transactions::class, 'transac_id', 'transac_id');
-        return $this->belongsTo(laundrycategory::class, 'categ_id', 'categ_id');
+        return $this->belongsTo(Transactions::class, 'Tracking_number', 'Tracking_number');
+        return $this->belongsTo(laundrycategory::class, 'Categ_ID', 'Categ_ID');
     }
 
     // public function laundryCategory()

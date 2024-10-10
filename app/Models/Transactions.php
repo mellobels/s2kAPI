@@ -10,22 +10,21 @@ class Transactions extends Model
 {
     use HasFactory;
     protected $table = "transactions";
-    protected $primaryKey = "transac_id";
+    protected $primaryKey = "Tracking_number";
     public $incrementing = true;
     protected $keyType = "int";
     protected $fillable = [
-        "transac_id",
-        "cust_id",
-        "admin_id",
-        "transac_date",
-        "transac_status",
-        "tracking_number",
-        "pickup_datetime",
-        "delivery_datetime"
+        "Tracking_number",
+        "Cust_ID",
+        "Admin_ID",
+        "Transac_date",
+        "Transac_status",
+        "Pickup_datetime",
+        "Delivery_datetime"
     ];
 
     public function transactionDetails()
     {
-        return $this->hasMany(transactiondetails::class, 'transac_id', 'transac_id');
+        return $this->hasMany(transactiondetails::class, 'Tracking_number', 'Tracking_number');
     }
 }

@@ -10,17 +10,17 @@ class laundrycategory extends Model
 {
     use HasFactory;
     protected $table = "laundry_categorys";
-    protected $primaryKey = "Categ_id";
+    protected $primaryKey = "Categ_ID";
     public $incrementing = true;
     protected $keyType = "int";
     protected $fillable = [
-        "Categ_id",
+        "Categ_ID",
         "Category",
         "Price"
     ];
 
     public function transactionDetails()
     {
-        return $this->hasMany(TransactionDetail::class, 'Categ_id','Categ_id');
+        return $this->hasMany(TransactionDetail::class, 'Categ_ID','Categ_ID');
     }
 }
